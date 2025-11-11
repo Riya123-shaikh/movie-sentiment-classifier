@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Movie Review Sentiment Classifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px;
+    }
+    textarea {
+      width: 60%;
+      height: 120px;
+      margin: 20px 0;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 25px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎥 Movie Review Sentiment Classifier</h1>
+  <form action="/predict" method="post">
+    <textarea name="review" placeholder="Enter your movie review here..."></textarea><br>
+    <button type="submit">Analyze Sentiment</button>
+  </form>
+
+  {% if sentiment %}
+  <div class="result">
+    <p><strong>Review:</strong> {{ review }}</p>
+    <p><strong>Predicted Sentiment:</strong> {{ sentiment }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>
